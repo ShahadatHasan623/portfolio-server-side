@@ -40,7 +40,7 @@ async function run() {
     })
 
    
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
@@ -54,6 +54,11 @@ run().catch(console.dir);
 app.get("/", (req, res) => {
   res.send("project server is running");
 });
+
+app.get("/test", (req, res) => {
+  res.send("project");
+});
+
 app.listen(port, () => {
   console.log(`server is running at:${port}`);
 });
